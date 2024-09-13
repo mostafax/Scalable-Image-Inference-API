@@ -12,7 +12,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
-RUN pip install "numpy<2.0"
 
 RUN pip install -r requirements.txt
 
