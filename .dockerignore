@@ -1,0 +1,32 @@
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment directory
+venv/
+env/
+
+# Configuration files and secrets
+.env
+*.env
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+
+# Ignore uploads (if you don’t want to include uploaded images in the Docker context)
+uploads/
+
+# Ignore Docker-related files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Ignore git repository files
+.git
+.gitignore
+
+# Ignore local data files
+*.sqlite3
+*.db
