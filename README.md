@@ -1,7 +1,7 @@
 
 # Scalable Image Inference API
 
-This project is a Python-based scalable image inference API that uses a pre-trained object detection model (e.g., YOLOv5/YOLOv8) to perform inference on images. The API is built using Flask, Celery for background task management, and Redis as a message broker. It is containerized using Docker and designed to handle multiple concurrent requests efficiently.
+This project is a Python-based scalable image inference API that uses a pre-trained object detection model YOLOv5 to perform inference on images. The API is built using Flask, Celery for background task management, and Redis as a message broker. It is containerized using Docker and designed to handle multiple concurrent requests efficiently.
 
 ## Features
 
@@ -40,15 +40,7 @@ This project is a Python-based scalable image inference API that uses a pre-trai
    cd scalable-image-inference-api
    ```
 
-2. **Set up environment variables**:
-   Create a `.env` file in the project root and add the following environment variables:
-
-   ```bash
-   BROKER_URL=redis://redis:6379/0
-   BACKEND_URL=redis://redis:6379/0
-   ```
-
-3. **Install dependencies using Docker**:
+2. **Install dependencies using Docker**:
 
    Build and run the Docker containers using Docker Compose:
 
@@ -57,21 +49,9 @@ This project is a Python-based scalable image inference API that uses a pre-trai
    docker-compose up
    ```
 
-4. **Install dependencies without Docker** (if not using Docker):
-   Install Python dependencies:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-   Start Redis:
-
-   ```bash
-   redis-server
-   ```
-
-5. **Ensure Uploads Folder Exists**:
-   Make sure the `uploads/` folder exists in the project directory, or create it:
+3. **Ensure Uploads Folder Exists**:
+   Make sure the `uploads/` folder exists in the project directory, or create it:(Optional should be created automatically )
 
    ```bash
    mkdir uploads
@@ -124,7 +104,7 @@ You can use the API to submit images for object detection and retrieve the resul
 - **Flask**: API framework to handle HTTP requests.
 - **Celery**: Task queue for managing background processing.
 - **Redis**: Message broker for Celery.
-- **YOLOv5/YOLOv8**: Object detection model for inference.
+- **YOLOv5**: Object detection model imported from ultralytics for inference.
 - **Docker**: Containerization for easy deployment and scalability.
 
 ## Architecture
