@@ -1,4 +1,4 @@
-<!-- Scalable Image Inference API -->
+## Scalable Image Inference API
 
 This project is a Python-based scalable image inference API that uses a pre-trained object detection model YOLOv5 to perform inference on images.
 The API is built using Flask, Celery for background task management, and Redis as a message broker.
