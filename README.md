@@ -8,17 +8,17 @@ Features :
 *    RESTful API to accept image files and return object detection results.
 *    Background task processing using Celery and Redis.
 *    Supports concurrent request handling with scalable task queue management.
-*    Object detection using YOLOv5/YOLOv8 pre-trained models.
+*    Object detection using YOLOv5 pre-trained model.
 *    Dockerized for easy deployment and scalability.
-Table of Contents
-Requirements
-Installation
-Usage
+### Table of Contents
+## Requirements
+## Installation
+## Usage
 Endpoints
 Technologies
 Architecture
-License
-Requirements
-Python 3.9+
-Docker & Docker Compose
-Redis
+
+#### Requirements
+1. Python 3.9+
+2. Docker & Docker Compose
+3. Redis
