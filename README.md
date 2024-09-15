@@ -50,7 +50,7 @@ This project is a Python-based scalable image inference API that uses a pre-trai
 
    ```bash
 docker-compose up --build
-  ```
+   ```
 
 
 3. **Ensure Uploads Folder Exists**:
