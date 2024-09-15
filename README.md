@@ -40,8 +40,8 @@ This project is a Python-based scalable image inference API that uses a pre-trai
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/scalable-image-inference-api.git
-   cd scalable-image-inference-api
+   git clone https://github.com/mostafax/Scalable-Image-Inference-API.git
+   cd Scalable-Image-Inference-API
    ```
 
 2. **Install dependencies using Docker**:
