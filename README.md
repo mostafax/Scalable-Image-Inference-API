@@ -49,9 +49,8 @@ This project is a Python-based scalable image inference API that uses a pre-trai
    Build and run the Docker containers using Docker Compose:
 
    ```bash
-   docker-compose build
-   docker-compose up
-   ```
+docker-compose up --build
+  ```
 
 
 3. **Ensure Uploads Folder Exists**:
