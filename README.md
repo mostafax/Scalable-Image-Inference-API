@@ -46,11 +46,18 @@ This project is a Python-based scalable image inference API that uses a pre-trai
 
 2. **Install dependencies using Docker**:
 
-   Build and run the Docker containers using Docker Compose:
+   Build and run the Docker containers using Docker Compose(CPu version):
 
    ```bash
    docker-compose up --build
    ```
+
+   Build and run the Docker containers using Docker Compose(GPu version):
+
+   ```bash
+   docker-compose -f docker-compose-gpu.yml up
+   ```
+    Note: you must have nvidia container runtime 
 
 3. **Ensure Uploads Folder Exists**:
    Make sure the `uploads/` folder exists in the project directory, or create it:(Optional should be created automatically )
