@@ -134,6 +134,9 @@ graph TD
     FlaskAPI -->|"Check Task Status"| Redis
     Redis -->|"Return Result"| Client
 ```
+
+![System Diagram Colored version](tests/images/system_diagram.drawio.png)
+
 ## Running Tests
 
 To ensure the system is working correctly, a set of tests is provided.
