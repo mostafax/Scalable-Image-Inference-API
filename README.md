@@ -23,6 +23,7 @@ This project is a Python-based scalable image inference API that uses a pre-trai
   - [Technologies](#technologies)
   - [Architecture](#architecture)
     - [System Diagram](#system-diagram)
+    - [System Diagram Colored version](#system-diagram-colored-version)
   - [Running Tests](#running-tests)
     - [Running the Tests](#running-the-tests)
     - [Test Cases](#test-cases)
@@ -134,6 +135,7 @@ graph TD
     FlaskAPI -->|"Check Task Status"| Redis
     Redis -->|"Return Result"| Client
 ```
+### System Diagram Colored version
 
 ![System Diagram Colored version](tests/images/system_diagram.drawio.png)
 
