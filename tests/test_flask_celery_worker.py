@@ -9,7 +9,6 @@ def client():
     # Enable testing mode in Flask
     app.config['TESTING'] = True
 
-    # Set the new upload folder path in the test environment
     app.config['UPLOAD_FOLDER'] = '../app/uploads'
 
     # Ensure the folder exists
