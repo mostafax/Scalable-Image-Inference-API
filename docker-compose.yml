@@ -10,15 +10,27 @@ services:
       - redis
     environment:
       - FLASK_APP=main.py
+    networks:
+      - default
     command: flask run --host=0.0.0.0 --port=5000
+
   worker:
     build: .
     volumes:
       - ./app:/app
     depends_on:
       - redis
+    networks:
+      - default
     command: celery -A worker.celery_app worker --loglevel=info
+
   redis:
     image: redis:alpine
     ports:
       - "6379:6379"
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
