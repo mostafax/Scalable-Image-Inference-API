@@ -1,8 +1,7 @@
-# Dockerfile
-
 FROM python:3.9-slim
 
 WORKDIR /app
+USER root
 
 COPY ./app /app
 
