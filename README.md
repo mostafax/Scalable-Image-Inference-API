@@ -164,7 +164,7 @@ To ensure the system is working correctly, a set of tests is provided.
    docker-compose -f docker-compose.test.yml up --build
    ```
 
-The tests will automatically execute in the container.
+The tests will automatically execute in the container and you chn show more info attaching to the worker container  
 
 ### Test Cases
 
