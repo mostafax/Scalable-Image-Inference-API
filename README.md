@@ -8,7 +8,7 @@ This project is a Python-based scalable image inference API that uses a pre-trai
 - RESTful API to accept image files and return object detection results.
 - Background task processing using Celery and Redis.
 - Supports concurrent request handling with scalable task queue management.
-- Object detection using YOLOv5/YOLOv8 pre-trained models.
+- Object detection using YOLOv5 pre-trained model.
 - Dockerized for easy deployment and scalability.
 
 ## Table of Contents
@@ -23,6 +23,9 @@ This project is a Python-based scalable image inference API that uses a pre-trai
   - [Technologies](#technologies)
   - [Architecture](#architecture)
     - [System Diagram](#system-diagram)
+  - [Running Tests](#running-tests)
+    - [Running the Tests](#running-the-tests)
+    - [Test Cases](#test-cases)
   - [License](#license)
 
 ## Requirements
@@ -131,6 +134,29 @@ graph TD
     FlaskAPI -->|"Check Task Status"| Redis
     Redis -->|"Return Result"| Client
 ```
+## Running Tests
+
+To ensure the system is working correctly, a set of tests is provided.
+
+### Running the Tests
+
+1. Build and run the Docker containers for testing:
+   ```bash
+   docker-compose -f docker-compose.test.yml up --build
+   ```
+
+2. The tests will automatically execute in the container. If you want to run them manually, you can run the following inside the container:
+   ```bash
+   pytest
+   ```
+
+### Test Cases
+
+- **`test_predict_no_file`**: Verifies that the API returns a 400 status code when no file is provided.
+- **`test_predict_valid_file`**: Tests the prediction endpoint with a valid image and checks for the task ID.
+- **`test_predict_image_sizes`**: Tests the prediction on small, medium, and large images, ensuring the correct number of persons are detected.
+- **`test_predict_task_status`**: Verifies the status of the task after submission.
+
 
 ## License
 
