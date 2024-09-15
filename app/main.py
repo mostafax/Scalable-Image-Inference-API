@@ -1,11 +1,8 @@
-# app/main.py
-
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
 from celery.result import AsyncResult
 from worker import celery_app
 from model.model import ObjectDetectionModel
-from utils.helpers import parse_results
 import os
 import uuid
 
