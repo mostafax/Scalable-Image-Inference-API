@@ -1,0 +1,52 @@
+version: '3'
+services:
+  api:
+    build: .
+    volumes:
+      - ./app:/app
+      - ./tests:/tests  # Mount the tests folder for API service
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    environment:
+      - FLASK_APP=main.py
+    networks:
+      - default
+    command: flask run --host=0.0.0.0 --port=5000
+
+  worker:
+    build: .
+    volumes:
+      - ./app:/app
+      - ./tests:/tests  # Mount the tests folder for worker service
+    depends_on:
+      - redis
+    networks:
+      - default
+    command: celery -A worker.celery_app worker --loglevel=info
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - default
+
+  # Add a service to run tests
+  test:
+    build: .
+    volumes:
+      - ./app:/app
+      - ./tests:/tests  # Mount the tests folder for test service
+    depends_on:
+      - api  # Ensure API service is up before running tests
+      - worker
+      - redis
+    networks:
+      - default
+    command: sh -c "cd /tests && PYTHONPATH=.. pytest"  # Run the pytest command when this service starts
+
+networks:
+  default:
+    driver: bridge
