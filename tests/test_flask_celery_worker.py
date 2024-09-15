@@ -2,7 +2,7 @@ import pytest
 from app.main import app
 import os
 import time
-import json
+import shutil
 
 @pytest.fixture
 def client():
@@ -18,6 +18,10 @@ def client():
 
     with app.test_client() as client:
         yield client
+    # Cleanup code: Remove the weights folder after tests finish
+    weights_folder = "weights"
+    if os.path.exists(weights_folder):
+        shutil.rmtree(weights_folder)
 
 
 def count_persons(data):
