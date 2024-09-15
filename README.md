@@ -46,13 +46,13 @@ This project is a Python-based scalable image inference API that uses a pre-trai
 
 2. **Install dependencies using Docker**:
 
-   Build and run the Docker containers using Docker Compose(CPu version):
+   Build and run the Docker containers using Docker Compose(CPU version):
 
    ```bash
    docker-compose up --build
    ```
 
-   Build and run the Docker containers using Docker Compose(GPu version):
+   Build and run the Docker containers using Docker Compose(GPU version):
 
    ```bash
    docker-compose -f docker-compose-gpu.yml up
