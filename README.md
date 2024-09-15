@@ -145,10 +145,7 @@ To ensure the system is working correctly, a set of tests is provided.
    docker-compose -f docker-compose.test.yml up --build
    ```
 
-2. The tests will automatically execute in the container. If you want to run them manually, you can run the following inside the container:
-   ```bash
-   pytest
-   ```
+The tests will automatically execute in the container.
 
 ### Test Cases
 
