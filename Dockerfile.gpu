@@ -1,0 +1,21 @@
+# Dockerfile.gpu
+FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime
+
+WORKDIR /app
+
+COPY ./app /app
+
+# Install required system dependencies
+RUN apt-get update && \
+    apt-get install -y git build-essential && \
+    apt-get install -y libgl1 libglib2.0-0 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Upgrade pip and install requirements
+RUN pip install --upgrade pip
+#COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+
+CMD ["python", "main.py"]
