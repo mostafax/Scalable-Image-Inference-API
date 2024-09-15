@@ -85,7 +85,21 @@ You can use the API to submit images for object detection and retrieve the resul
    ```
 
    Replace `<task_id>` with the actual task ID from the `/predict` response.
-
+   
+   Response:
+   ```json
+   {
+     "status": "Success",
+     "result": [
+       {
+         "class_name": "xxxx",
+         "confidence": 0.95,
+         "bounding_box": [x1, y1, x2, y2]
+       },
+       ...
+     ]
+   }
+   ```
 ## Endpoints
 
 - **POST /predict**: Accepts an image file and queues a task for object detection. Returns a task ID.
